@@ -1,0 +1,154 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  padding: 10px;
+}
+
+.TODO-APP {
+  width: 100%;
+  max-width: 540px;
+  background: white;
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+}
+
+.TODO-APP h2 {
+  color: #333;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.TODO-APP h2 img {
+  width: 30px;
+  margin-left: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: lightsteelblue;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: 14px;
+  padding: 10px;
+}
+
+.add {
+  border: none;
+  outline: none;
+  background: rgb(34, 112, 25);
+  color: #fff;
+  padding: 16px 50px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.add:hover {
+  background: rgb(24, 92, 15);
+}
+
+ul li {
+  list-style: none;
+  background: #f9f9f9;
+  padding: 10px 20px;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.task-name {
+  font-size: 18px;
+  padding-left: 25px;
+}
+
+.delete {
+  background: rgb(17, 139, 113);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.delete:hover {
+  background: rgb(7, 119, 103);
+}
+
+ul li ::before {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-image: url(./Images/unchecked.png);
+  background-size: cover;
+  background-position: center;
+  left: 12px;
+  top: 8px;
+}
+
+ul li.completed ::before {
+  background-image: url(./Images/checked.png);
+}
+
+ul li.completed .task-name {
+  text-decoration: line-through;
+  color: #333;
+}
+
+ul li.completed .delete {
+  background: rgb(255, 0, 0);
+}
+
+ul li.completed .delete:hover {
+  background: rgb(155, 0, 0);
+}
+
+@media screen and (max-width: 768px) {
+  .TODO-APP {
+    padding: 20px 10px 50px;
+  }
+
+  .add {
+    padding: 16px 30px;
+  }
+
+  ul li {
+    padding: 10px 15px;
+  }
+
+  ul li ::before {
+    width: 20px;
+    height: 20px;
+    top: 5px;
+  }
+
+  ul li.completed .delete {
+    padding: 5px 8px;
+  }
+}
